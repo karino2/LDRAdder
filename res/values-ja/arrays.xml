@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="dialog_sub_list_view">
+        <item>フラット</item>
+        <item>フォルダ</item>
+        <item>レート</item>
+    </string-array>
+
+    <string-array name="dialog_sub_list_sort">
+        <item>新着順</item>
+        <item>旧着順</item>
+        <item>未読が多い</item>
+        <item>未読が少ない</item>
+        <item>タイトル</item>
+        <item>レート</item>
+        <item>読者が多い</item>
+        <item>読者が少ない</item>
+    </string-array>
+
+    <string-array name="dialog_pin_action">
+        <item>ブラウザで閲覧</item>
+        <item>URL をコピー</item>
+        <item>削除</item>
+    </string-array>
+
+    <string-array name="sync_interval_hours_labels">
+        <item>定期的に取り込まない</item>
+        <item>1時間毎</item>
+        <item>2時間毎</item>
+        <item>4時間毎</item>
+        <item>12時間毎</item>
+        <item>1日毎</item>
+    </string-array>
+
+    <string-array name="item_body_font_size_labels">
+        <item>最小</item>
+        <item>小</item>
+        <item>中</item>
+        <item>大</item>
+        <item>最大</item>
+    </string-array>
+
+    <string-array name="dialog_items_move">
+        <item>最後に読んだ記事</item>
+        <item>最新の未読記事</item>
+        <item>古い未読記事</item>
+    </string-array>
+
+    <string-array name="dialog_items_reload_items">
+        <item>通常</item>
+        <item>古い記事と削除した記事を含む（最大100件）</item>
+    </string-array>
+
+    <string-array name="dialog_items_remove_items">
+        <item>フィード内の全記事</item>
+        <item>フィード内の既読記事</item>
+    </string-array>
+
+    <string-array name="dialog_sub_list_remove_items">
+        <item>全記事</item>
+        <item>既読記事</item>
+    </string-array>
+
+</resources>

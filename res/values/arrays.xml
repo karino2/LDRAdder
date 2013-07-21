@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="dialog_sub_list_view">
+        <item>Flat</item>
+        <item>Folder</item>
+        <item>Rating</item>
+    </string-array>
+
+    <string-array name="dialog_sub_list_sort">
+        <item>Recent</item>
+        <item>Old</item>
+        <item>Unread desc</item>
+        <item>Unread asc</item>
+        <item>Title</item>
+        <item>Rating</item>
+        <item>Subscribers desc</item>
+        <item>Subscribers asc</item>
+    </string-array>
+
+    <string-array name="dialog_pin_action">
+        <item>Browse</item>
+        <item>Copy URL</item>
+        <item>Remove</item>
+    </string-array>
+
+    <string-array name="sync_interval_hours_labels">
+        <item>Manual</item>
+        <item>Every 1 hour</item>
+        <item>Every 2 hours</item>
+        <item>Every 4 hours</item>
+        <item>Every 12 hours</item>
+        <item>Everydays</item>
+    </string-array>
+    <string-array name="sync_interval_hours_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>12</item>
+        <item>24</item>
+    </string-array>
+
+    <string-array name="item_body_font_size_labels">
+        <item>Tiny</item>
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+        <item>Huge</item>
+    </string-array>
+    <string-array name="item_body_font_size_values">
+        <item>10</item>
+        <item>11</item>
+        <item>13</item>
+        <item>15</item>
+        <item>17</item>
+    </string-array>
+
+    <string-array name="dialog_items_move">
+        <item>Last read</item>
+        <item>New unread</item>
+        <item>Old unread</item>
+    </string-array>
+
+    <string-array name="dialog_items_reload_items">
+        <item>Normal reload</item>
+        <item>With old and removed (max 100)</item>
+    </string-array>
+
+    <string-array name="dialog_items_remove_items">
+        <item>All in this feed</item>
+        <item>Reads in this feed</item>
+    </string-array>
+
+    <string-array name="dialog_sub_list_remove_items">
+        <item>All</item>
+        <item>Reads</item>
+    </string-array>
+
+</resources>

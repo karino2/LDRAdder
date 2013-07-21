@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LDReader</string>
+
+    <string name="msg_running">処理を実行中です</string>
+    <string name="msg_login_running">ログインを実行中です</string>
+    <string name="msg_login_success_and_sync_running">ログインに成功しました。フィードを読み込み中です</string>
+    <string name="msg_login_fail">ログインに失敗しました</string>
+    <string name="msg_login_info_html"><![CDATA[
+        このアプリケーションを使用するためには <a href="http://reader.livedoor.com/">livedoor Reader</a> の利用登録が必要です。
+        <div style="text-align:center;margin-top:5px;">Created by: <a href="http://trycatch.jp/">Trycatch, Inc.</a></div>
+    ]]></string>
+    <string name="msg_sync_started">取り込みを開始しました</string>
+    <string name="msg_sync_running">取り込みを実行中です</string>
+    <string name="msg_sync_running_read">未読が見つかりません。既読の取り込みを実行中です</string>
+    <string name="msg_sync_finished">{0}件の記事を取り込みました（未読 {1}件）</string>
+    <string name="msg_remove_running">記事を削除しています</string>
+    <string name="msg_remove_finished">記事を削除しました</string>
+    <string name="msg_pin_all_running">ピンの取り込みを実行中です</string>
+    <string name="msg_pin_add_running">ピンを追加しています</string>
+    <string name="msg_pin_remove_running">ピンを削除しています</string>
+    <string name="msg_no_subscription">表示できるフィードはありません</string>
+    <string name="msg_no_item_for_title">（表示できる記事はありません）</string>
+    <string name="msg_no_item">表示できる記事はありません</string>
+    <string name="msg_no_pin">ピンはありません</string>
+    <string name="msg_touch_running">既読処理を実行中です</string>
+    <string name="msg_touch_feed_local">このフィードの記事すべてを既読にしました</string>
+    <string name="msg_touch_all_local">記事すべてを既読にしました</string>
+    <string name="msg_confirm_touch_feed_local">このフィードの記事すべてを既読にしますか？</string>
+    <string name="msg_confirm_touch_all_local">すべてのフィードを既読にしますか？</string>
+    <string name="msg_confirm_browse">ブラウザを起動しますか？</string>
+
+    <string name="err_io">通信エラーが発生しました</string>
+
+    <string name="txt_login_id">livedoor ID</string>
+    <string name="txt_password">Password</string>
+    <string name="txt_login">Login</string>
+    <string name="txt_cancel">Cancel</string>
+    <string name="txt_get_account">GET livedoor ID</string>
+    <string name="txt_unreads">未読</string>
+    <string name="txt_reads">既読</string>
+    <string name="txt_no_folder">（フォルダ無し）</string>
+    <string name="txt_clear_all">すべて削除</string>
+    <string name="txt_share_urls">URL リストを共有</string>
+
+    <string name="login_title">ログイン</string>
+    <string name="pin_title">ピン一覧</string>
+
+    <string name="dialog_sub_list_view_title">表示形式の選択</string>
+    <string name="dialog_sub_list_sort_title">並び替え</string>
+    <string name="dialog_sub_list_remove_items">記事の削除</string>
+    <string name="dialog_items_reload_title">記事の読み込み</string>
+    <string name="dialog_items_move_title">記事に移動</string>
+    <string name="dialog_items_remove_title">記事の削除</string>
+
+    <string name="preference_category_account">アカウント</string>
+    <string name="preference_login_title">ログイン情報を変更</string>
+
+    <string name="preference_category_sync">同期設定</string>
+    <string name="preference_sync_interval_title">取り込み周期</string>
+    <string name="preference_sync_interval_summary">定期的に取り込む周期を設定します</string>
+    <string name="preference_auto_touch_all_title">取り込み時の自動既読</string>
+    <string name="preference_auto_touch_all_summary">取り込み時、フィード毎にサーバに既読を送信します</string>
+    <string name="preference_sync_unread_only_title">未読のみを取り込む</string>
+    <string name="preference_sync_unread_only_summary">チェックを外すと未読が無い場合、既読を取り込みます</string>
+    <string name="preference_sync_notifiable_title">同期の通知</string>
+    <string name="preference_sync_notifiable_summary">同期の通常のお知らせを通知します</string>
+
+    <string name="preference_category_view">表示設定</string>
+    <string name="preference_view_unread_only_title">既読フィードを隠す</string>
+    <string name="preference_view_unread_only_summary">未読が 0件の既読フィードは表示しません</string>
+    <string name="preference_view_disable_item_links_title">記事中のリンクを無効</string>
+    <string name="preference_view_disable_item_links_summary">記事中の URL をクリックしてもブラウザを起動しません</string>
+    <string name="preference_view_show_item_controlls_title">記事コントロール表示</string>
+    <string name="preference_view_show_item_controlls_summary">常に記事コントロールを表示します</string>
+    <string name="preference_view_omit_item_list">記事一覧画面を省略する</string>
+    <string name="preference_view_omit_item_list_summary">記事一覧画面を省略して詳細画面に遷移します</string>
+    <string name="preference_view_item_body_font_size_title">記事の文字の大きさ</string>
+
+    <string name="preference_category_info">情報</string>
+    <string name="preference_info_about_title">LDReader について</string>
+
+</resources>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+            android:title="@string/preference_category_account">
+
+        <PreferenceScreen
+                android:title="@string/preference_login_title">
+            <intent android:action="android.intent.action.VIEW"
+                    android:targetPackage="org.jarx.android.livedoor.reader"
+                    android:targetClass="org.jarx.android.livedoor.reader.LoginActivity" />
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="@string/preference_category_sync">
+
+        <ListPreference
+                android:key="sync_interval_hours"
+                android:title="@string/preference_sync_interval_title"
+                android:summary="@string/preference_sync_interval_summary"
+                android:entries="@array/sync_interval_hours_labels"
+                android:entryValues="@array/sync_interval_hours_values"
+                android:defaultValue="2"
+                android:dialogTitle="@string/preference_sync_interval_title" />
+
+        <CheckBoxPreference
+                android:key="auto_touch_all"
+                android:defaultValue="false"
+                android:title="@string/preference_auto_touch_all_title"
+                android:summary="@string/preference_auto_touch_all_summary" />
+
+        <CheckBoxPreference
+                android:key="sync_unread_only"
+                android:defaultValue="true"
+                android:title="@string/preference_sync_unread_only_title"
+                android:summary="@string/preference_sync_unread_only_summary" />
+
+        <CheckBoxPreference
+                android:key="sync_notifiable"
+                android:defaultValue="true"
+                android:title="@string/preference_sync_notifiable_title"
+                android:summary="@string/preference_sync_notifiable_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="@string/preference_category_view">
+
+        <ListPreference
+                android:key="item_body_font_size"
+                android:title="@string/preference_view_item_body_font_size_title"
+                android:entries="@array/item_body_font_size_labels"
+                android:entryValues="@array/item_body_font_size_values"
+                android:defaultValue="13"
+                android:dialogTitle="@string/preference_view_item_body_font_size_title" />
+
+        <CheckBoxPreference
+                android:key="view_unread_only"
+                android:defaultValue="false"
+                android:title="@string/preference_view_unread_only_title"
+                android:summary="@string/preference_view_unread_only_summary" />
+
+        <CheckBoxPreference
+                android:key="disable_item_links"
+                android:defaultValue="false"
+                android:title="@string/preference_view_disable_item_links_title"
+                android:summary="@string/preference_view_disable_item_links_summary" />
+
+        <CheckBoxPreference
+                android:key="show_item_controlls"
+                android:defaultValue="true"
+                android:title="@string/preference_view_show_item_controlls_title"
+                android:summary="@string/preference_view_show_item_controlls_summary" />
+
+        <CheckBoxPreference
+                android:key="omit_item_list"
+                android:defaultValue="false"
+                android:title="@string/preference_view_omit_item_list"
+                android:summary="@string/preference_view_omit_item_list_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="@string/preference_category_info">
+
+        <PreferenceScreen
+                android:title="@string/preference_info_about_title">
+            <intent android:action="android.intent.action.VIEW"
+                    android:targetPackage="org.jarx.android.livedoor.reader"
+                    android:targetClass="org.jarx.android.livedoor.reader.AboutActivity" />
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

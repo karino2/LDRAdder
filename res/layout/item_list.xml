@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    <LinearLayout android:id="@+id/search_bar"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+        <EditText android:id="@+id/edit_keyword"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:paddingTop="1dip"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:textAppearance="@android:attr/textAppearanceMedium" />
+
+        <ImageButton android:id="@+id/btn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_btn_search"
+                android:scaleType="center" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#1a1a1a">
+
+        <ImageView android:id="@+id/sub_icon"
+                android:layout_width="32dip"
+                android:layout_height="32dip"
+                android:scaleType="center" />
+<!--
+        <ImageView android:id="@+id/star"
+                android:src="@android:drawable/btn_star_big_on"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+-->
+
+        <TextView android:id="@+id/sub_title"
+                android:layout_gravity="center_vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="32dip"
+                android:textSize="16dip"
+                android:paddingLeft="8dip"
+                android:paddingRight="8dip"
+                android:gravity="center_vertical"
+                android:textColor="#bebebe" />
+
+    </LinearLayout>
+
+    <FrameLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        <ListView android:id="@android:id/list"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:drawSelectorOnTop="false" />
+
+        <TextView android:id="@id/android:empty"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center|center_vertical"
+                android:text="@string/msg_no_item" />
+
+    </FrameLayout>
+
+</LinearLayout>

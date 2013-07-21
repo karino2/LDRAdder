@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        <ImageView android:id="@+id/icon"
+                android:layout_width="32dip"
+                android:layout_height="32dip"
+                android:scaleType="center" />
+
+        <TextView android:id="@+id/title"
+                android:layout_gravity="center_vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="36dip"
+                android:textSize="16dip"
+                android:paddingLeft="8dip"
+                android:paddingRight="8dip" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        <RatingBar android:id="@+id/rating_bar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_marginLeft="5dip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:numStars="5" />
+
+        <TextView android:id="@+id/etc"
+                android:layout_gravity="center_vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10dip"
+                android:paddingLeft="8dip"
+                android:paddingRight="8dip" />
+
+    </LinearLayout>
+
+</LinearLayout>

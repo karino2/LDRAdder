@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_item_reload"
+        android:orderInCategory="1"
+        android:title="Reload"
+        android:icon="@drawable/ic_menu_refresh" />
+
+    <item android:id="@+id/menu_item_subs_view"
+        android:orderInCategory="2"
+        android:title="View Type"
+        android:icon="@android:drawable/ic_menu_sort_by_size" />
+
+    <item android:id="@+id/menu_item_subs_sort"
+        android:orderInCategory="3"
+        android:title="Sort"
+        android:icon="@android:drawable/ic_menu_sort_alphabetically" />
+
+    <item android:id="@+id/menu_item_touch_all_local"
+        android:orderInCategory="4"
+        android:title="Read all"
+        android:icon="@android:drawable/ic_menu_rotate" />
+
+    <item android:id="@+id/menu_item_pin"
+        android:orderInCategory="8"
+        android:title="Pin list"
+        android:icon="@drawable/ic_menu_agenda" />
+
+    <item android:id="@+id/menu_item_setting"
+        android:orderInCategory="9"
+        android:title="Settings"
+        android:icon="@android:drawable/ic_menu_preferences" />
+
+</menu>

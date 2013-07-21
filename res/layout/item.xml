@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView android:id="@+id/sub_icon"
+                android:layout_width="32dip"
+                android:layout_height="32dip"
+                android:scaleType="center" />
+<!--
+        <ImageView android:id="@+id/star"
+                android:src="@android:drawable/btn_star_big_on"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+-->
+        <TextView android:id="@+id/sub_title"
+                android:layout_gravity="center_vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="32dip"
+                android:textSize="16dip"
+                android:paddingLeft="8dip"
+                android:paddingRight="8dip"
+                android:gravity="center_vertical" />
+
+    </LinearLayout>
+
+    <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+            <FrameLayout android:id="@+id/item_title_bar"
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView android:id="@+id/item_title"
+                        android:layout_gravity="center"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="36dip"
+                        android:paddingLeft="28dip"
+                        android:paddingRight="28dip"
+                        android:textSize="14dip"
+                        android:textColor="#000"
+                        android:background="#eee" />
+
+                <ImageView android:id="@+id/icon_read_unread"
+                        android:src="@drawable/item_unread"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|top"
+                        android:scaleType="center" />
+
+                <ImageView android:id="@+id/pin"
+                        android:src="@drawable/pin_off"
+                        android:layout_gravity="right|top"
+                        android:paddingTop="2dip"
+                        android:paddingRight="2dip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+            </FrameLayout>
+
+            <WebView android:id="@+id/item_body"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@id/item_title_bar" />
+
+        </RelativeLayout>
+
+        <ImageView android:id="@+id/previous"
+                android:src="@drawable/btn_left"
+                android:layout_gravity="left|bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible" />
+
+        <ImageView android:id="@+id/next"
+                android:src="@drawable/btn_right"
+                android:layout_gravity="right|bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible" />
+
+        <LinearLayout android:id="@+id/zoom_controlls"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:visibility="invisible">
+
+            <ImageView android:id="@+id/zoom_out"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/btn_zoom_out" />
+
+            <ImageView android:id="@+id/zoom_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/btn_zoom_in" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

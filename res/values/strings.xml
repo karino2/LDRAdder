@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LDReader</string>
+
+    <string name="msg_running">Processing..</string>
+    <string name="msg_login_running">Login..</string>
+    <string name="msg_login_success_and_sync_running">Login success. synchronization running.</string>
+    <string name="msg_login_fail">Login failure</string>
+    <string name="msg_login_info_html"><![CDATA[
+        LDReader using <a href="http://reader.livedoor.com/">livedoor Reader</a>.
+        <div style="text-align:center;margin-top:5px;">Created by: <a href="http://trycatch.jp/">Trycatch, Inc.</a></div>
+    ]]></string>
+    <string name="msg_sync_started">Synchronization started.</string>
+    <string name="msg_sync_running">Synchronization running.</string>
+    <string name="msg_sync_running_read">Item not found. Synchronization running.</string>
+    <string name="msg_sync_finished">{0} items synchronized. (unreads {1})</string>
+    <string name="msg_remove_running">Removing..</string>
+    <string name="msg_remove_finished">Removed.</string>
+    <string name="msg_pin_all_running">Pin synchronization running.</string>
+    <string name="msg_pin_add_running">Pin adding.</string>
+    <string name="msg_pin_remove_running">Pin removing.</string>
+    <string name="msg_no_subscription">Feed not found.</string>
+    <string name="msg_no_item_for_title">(Item not found)</string>
+    <string name="msg_no_item">Item not found.</string>
+    <string name="msg_no_pin">Pin not found.</string>
+    <string name="msg_touch_running">Mark as read running.</string>
+    <string name="msg_touch_feed_local">Marked all as read in this feed.</string>
+    <string name="msg_touch_all_local">Marked all as read.</string>
+    <string name="msg_confirm_touch_feed_local">Do you mark all as read in this feed?</string>
+    <string name="msg_confirm_touch_all_local">Do you mark all as read?</string>
+    <string name="msg_confirm_browse">Browse url?</string>
+
+    <string name="err_io">Network error</string>
+
+    <string name="txt_login_id">livedoor ID</string>
+    <string name="txt_password">Password</string>
+    <string name="txt_login">Login</string>
+    <string name="txt_cancel">Cancel</string>
+    <string name="txt_get_account">GET livedoor ID</string>
+    <string name="txt_unreads">Unreads</string>
+    <string name="txt_reads">Reads</string>
+    <string name="txt_no_folder">（No folder）</string>
+    <string name="txt_clear_all">Clear all</string>
+    <string name="txt_share_urls">Share URLs</string>
+
+    <string name="login_title">Login</string>
+    <string name="pin_title">Pin list</string>
+
+    <string name="dialog_sub_list_view_title">Select view type</string>
+    <string name="dialog_sub_list_sort_title">Select sort type</string>
+    <string name="dialog_sub_list_remove_items">Remove items</string>
+    <string name="dialog_items_reload_title">Reload items</string>
+    <string name="dialog_items_move_title">Move to</string>
+    <string name="dialog_items_remove_title">Remove Items</string>
+
+    <string name="preference_category_account">Account</string>
+    <string name="preference_login_title">Login settings</string>
+
+    <string name="preference_category_sync">Synchronization</string>
+    <string name="preference_sync_interval_title">Interval</string>
+    <string name="preference_sync_interval_summary">How oftern should synchronize?</string>
+    <string name="preference_auto_touch_all_title">Auto send reads</string>
+    <string name="preference_auto_touch_all_summary">Send reads to server with synchronization.</string>
+    <string name="preference_sync_unread_only_title">Unreads only</string>
+    <string name="preference_sync_unread_only_summary">Synchronization unreads only</string>
+    <string name="preference_sync_notifiable_title">Notifiable information</string>
+    <string name="preference_sync_notifiable_summary">Enable notification infomation message?</string>
+
+    <string name="preference_category_view">Display</string>
+    <string name="preference_view_unread_only_title">Hide no item</string>
+    <string name="preference_view_unread_only_summary">Hide no item feeds</string>
+    <string name="preference_view_disable_item_links_title">Disable links</string>
+    <string name="preference_view_disable_item_links_summary">Disable raunch browser if link clicked.</string>
+    <string name="preference_view_show_item_controlls_title">Show item controlls</string>
+    <string name="preference_view_show_item_controlls_summary">Don't hide item controlls.</string>
+    <string name="preference_view_omit_item_list">Omit item list</string>
+    <string name="preference_view_omit_item_list_summary"></string>
+    <string name="preference_view_item_body_font_size_title">Item view font size</string>
+
+    <string name="preference_category_info">Information</string>
+    <string name="preference_info_about_title">About LDReader</string>
+
+</resources>

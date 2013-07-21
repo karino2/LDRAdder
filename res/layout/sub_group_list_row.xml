@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#333">
+
+    <LinearLayout android:id="@+id/text_layout"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:minHeight="36dip"
+            android:paddingLeft="36dip"
+            android:gravity="center_vertical">
+
+        <ImageView
+                android:src="@drawable/folder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        <TextView android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="4dip"
+                android:textColor="#eee" />
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/rating_bar_layout"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:minHeight="36dip"
+            android:paddingLeft="36dip"
+            android:gravity="center_vertical">
+
+        <RatingBar android:id="@+id/rating_bar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:numStars="5" />
+
+        <TextView android:id="@+id/count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</FrameLayout>
