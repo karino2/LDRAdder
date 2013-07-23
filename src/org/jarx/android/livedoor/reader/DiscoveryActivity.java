@@ -41,10 +41,18 @@ public class DiscoveryActivity extends Activity {
     }
 
     Handler handler = new Handler();
+    boolean pendingDiscover = false;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.discovery);
+
+        String url = getIntent().getStringExtra("feedurl");
+        if(url != null) {
+            EditText et = (EditText)findViewById(R.id.editUrl);
+            et.setText(url);
+            pendingDiscover = true;
+        }
 
 
 
@@ -59,6 +67,10 @@ public class DiscoveryActivity extends Activity {
                         @Override
                         public void run() {
                             findButton(R.id.buttonDiscover).setEnabled(true);
+                            if(pendingDiscover) {
+                                pendingDiscover = false;
+                                doDiscover();
+                            }
                         }
                     });
                 } catch (Exception e) {
@@ -70,14 +82,7 @@ public class DiscoveryActivity extends Activity {
         (findButton(R.id.buttonDiscover)).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                DiscoveryTask task = new DiscoveryTask(DiscoveryActivity.this, new OnFinishListener(){
-                    @Override
-                    public void done() {
-                        onDiscoverResultComing();
-                    }
-                });
-                EditText et = (EditText)findViewById(R.id.editUrl);
-                task.execute(et.getText().toString());
+                doDiscover();
             }
         });
 
@@ -118,6 +123,22 @@ public class DiscoveryActivity extends Activity {
             }
         });
 
+    }
+
+    private void doDiscover() {
+        EditText et = (EditText)findViewById(R.id.editUrl);
+        String discoverUrl = et.getText().toString();
+        doDiscoverUrl(discoverUrl);
+    }
+
+    private void doDiscoverUrl(String discoverUrl) {
+        DiscoveryTask task = new DiscoveryTask(this, new OnFinishListener(){
+            @Override
+            public void done() {
+                onDiscoverResultComing();
+            }
+        });
+        task.execute(discoverUrl);
     }
 
     private void onSubscribeDone() {

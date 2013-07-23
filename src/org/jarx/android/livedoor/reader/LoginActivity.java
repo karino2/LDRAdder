@@ -38,6 +38,16 @@ public class LoginActivity extends Activity {
             }
         }
 
+        if(caller != null && (caller.equals(Intent.ACTION_SEND) && loginId != null)) {
+            String url = getIntent().getStringExtra(Intent.EXTRA_TEXT);
+            if(url != null) {
+                Intent intent = new Intent(this, DiscoveryActivity.class);
+                intent.putExtra("feedurl", url);
+                startActivity(intent);
+                finish();
+            }
+        }
+
         Window w = getWindow();
         w.requestFeature(Window.FEATURE_LEFT_ICON);
         setContentView(R.layout.login);
