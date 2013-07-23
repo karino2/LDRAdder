@@ -224,6 +224,9 @@ public class SubListActivityHelper extends ActivityHelper {
             activity.startActivityForResult(new Intent(activity,
                 ReaderPreferenceActivity.class), REQUEST_PREFERENCES);
             return true;
+        case R.id.menu_item_discovery:
+            activity.startActivity(new Intent(activity, DiscoveryActivity.class));
+            return true;
         }
         return false;
     }

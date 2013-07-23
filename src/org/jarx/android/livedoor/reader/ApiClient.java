@@ -5,8 +5,11 @@ import java.io.FilterInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Map;
+
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -53,6 +56,8 @@ public class ApiClient {
     private static final String URL_API_PIN_ADD = URL_API_BASE + "/pin/add";
     private static final String URL_API_PIN_REMOVE = URL_API_BASE + "/pin/remove";
     private static final String URL_API_PIN_CLEAR = URL_API_BASE + "/pin/clear";
+    private static final String URL_API_SUBSCRIBE = URL_API_BASE + "/feed/subscribe";
+    private static final String URL_API_DISCOVER = "http://rpc.reader.livedoor.com/feed/discover";
     private static final String URL_RPC_NOTIFY = "http://rpc.reader.livedoor.com/notify";
 
     private final DefaultHttpClient client;
@@ -185,6 +190,24 @@ public class ApiClient {
         return toJSONArray(readSubs(unread, fromId, limit));
     }
 
+    public JSONArray discoverWithLinks(String url) throws IOException, ParseException {
+        return discover(url, "links");
+    }
+
+    public JSONArray discoverWithUrl(String url) throws IOException, ParseException {
+        return discover(url, "url");
+    }
+
+    private JSONArray discover(String url, String urlParamName) throws IOException, ParseException {
+        List<NameValuePair> params = new ArrayList<NameValuePair>(2);
+        if(!url.endsWith("/")) {
+            url = url + "/";
+        }
+        params.add(new BasicNameValuePair(urlParamName, url));
+        params.add(new BasicNameValuePair("format", "json"));
+        return toJSONArray(doPostReader(URL_API_DISCOVER, params));
+    }
+
     /** implements /api/all */
     public java.io.Reader readAll(long subId, int offset, int limit)
             throws IOException, ReaderException {
@@ -276,6 +299,19 @@ public class ApiClient {
         JSONObject result = toJSONObject(doPostReader(URL_API_PIN_ADD, params));
         int errorCode = asInt(result.get("ErrorCode"));
         int isSuccess = asInt(result.get("isSuccess"));
+        return (errorCode == 0 && isSuccess == 1);
+    }
+
+    public boolean subscribe(String link) throws IOException, ReaderException, ParseException {
+        initApiKey();
+
+        List<NameValuePair> params = new ArrayList<NameValuePair>(1);
+        params.add(new BasicNameValuePair("feedlink", link));
+        JSONObject result = toJSONObject(doPostReader(URL_API_SUBSCRIBE, params));
+
+        int errorCode = asInt(result.get("ErrorCode"));
+        int isSuccess = asInt(result.get("isSuccess"));
+
         return (errorCode == 0 && isSuccess == 1);
     }
 
@@ -381,7 +417,7 @@ public class ApiClient {
         return new InputStreamReader(doPostInputStream(url, params), HTTP.UTF_8);
     }
 
-    private static String readString(java.io.Reader in) throws IOException {
+    public static String readString(java.io.Reader in) throws IOException {
         try {
             StringBuilder b = new StringBuilder(2048);
             char[] c = new char[1024];

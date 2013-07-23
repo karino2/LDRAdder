@@ -73,7 +73,7 @@
     <string name="preference_view_disable_item_links_title">Disable links</string>
     <string name="preference_view_disable_item_links_summary">Disable raunch browser if link clicked.</string>
     <string name="preference_view_show_item_controlls_title">Show item controlls</string>
-    <string name="preference_view_show_item_controlls_summary">Don't hide item controlls.</string>
+    <string name="preference_view_show_item_controlls_summary">Don\'t hide item controlls.</string>
     <string name="preference_view_omit_item_list">Omit item list</string>
     <string name="preference_view_omit_item_list_summary"></string>
     <string name="preference_view_item_body_font_size_title">Item view font size</string>

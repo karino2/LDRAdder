@@ -31,6 +31,7 @@
         android:title="Remove Items"
         android:icon="@android:drawable/ic_menu_delete" />
 
+
     <item android:id="@+id/menu_item_setting"
         android:orderInCategory="99"
         android:title="Settings"

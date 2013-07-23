@@ -26,6 +26,13 @@
         android:title="Pin list"
         android:icon="@drawable/ic_menu_agenda" />
 
+
+    <item android:id="@+id/menu_item_discovery"
+          android:orderInCategory="7"
+          android:title="Discovery"
+            />
+    <!-- android:icon="@android:drawable/ic_menu_preferences" /> -->
+
     <item android:id="@+id/menu_item_remove_items"
         android:orderInCategory="8"
         android:title="Remove Items"
