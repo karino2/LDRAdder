@@ -31,13 +31,8 @@ import java.util.List;
  */
 public class DiscoveryActivity extends Activity {
 
-    final int DIALOG_ID_DISCOVER = 1;
-    final int DIALOG_ID_ADD = 2;
-
     ApiClient client = new ApiClient();
 
-    ProgressDialog dialogDiscover;
-    ProgressDialog dialogAdd;
 
     public boolean login() throws IOException, ReaderException {
         String loginId = ReaderPreferences.getLoginId(this);
@@ -75,7 +70,7 @@ public class DiscoveryActivity extends Activity {
         (findButton(R.id.buttonDiscover)).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                DiscoveryTask task = new DiscoveryTask(new OnFinishListener(){
+                DiscoveryTask task = new DiscoveryTask(DiscoveryActivity.this, new OnFinishListener(){
                     @Override
                     public void done() {
                         onDiscoverResultComing();
@@ -89,7 +84,7 @@ public class DiscoveryActivity extends Activity {
         findButton(R.id.buttonAdd).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AddLinksTask task = new AddLinksTask(new OnFinishListener() {
+                AddLinksTask task = new AddLinksTask(DiscoveryActivity.this, new OnFinishListener() {
                     @Override
                     public void done() {
                         onSubscribeDone();
@@ -160,21 +155,6 @@ public class DiscoveryActivity extends Activity {
     }
 
 
-    @Override
-    protected Dialog onCreateDialog(int id) {
-        switch(id) {
-            case DIALOG_ID_DISCOVER:
-                dialogDiscover = new ProgressDialog(this);
-                dialogDiscover.setTitle("Auto discovery feeds...");
-                return dialogDiscover;
-            case DIALOG_ID_ADD:
-                dialogAdd = new ProgressDialog(this);
-                dialogAdd.setTitle("Add links");
-                return dialogAdd;
-        }
-        return super.onCreateDialog(id);
-    }
-
     JSONArray discoverResult = null;
 
     interface OnFinishListener {
@@ -182,15 +162,18 @@ public class DiscoveryActivity extends Activity {
     }
     class DiscoveryTask extends AsyncTask<String, Integer, Boolean> {
 
+        ProgressDialog progress;
 
         OnFinishListener listener;
-        DiscoveryTask(OnFinishListener onFinish) {
+        DiscoveryTask(Context context, OnFinishListener onFinish) {
             listener = onFinish;
+            progress = new ProgressDialog(context);
         }
 
         @Override
         protected void onPreExecute() {
-            showDialog(DIALOG_ID_DISCOVER);
+            progress.setTitle("Auto discovery feeds...");
+            progress.show();
         }
 
         @Override
@@ -222,10 +205,7 @@ public class DiscoveryActivity extends Activity {
 
         @Override
         protected void onPostExecute(Boolean aBoolean) {
-            if(dialogDiscover != null) {
-                dialogDiscover.dismiss();
-                dialogDiscover = null;
-            }
+            progress.dismiss();
             if(aBoolean == false) {
                 showMessage("FAIL");
                 return;
@@ -241,15 +221,19 @@ public class DiscoveryActivity extends Activity {
 
     class AddLinksTask extends AsyncTask<List<String>, Integer, Boolean> {
         OnFinishListener listener;
-        AddLinksTask(OnFinishListener onFinish) {
+        ProgressDialog progress;
+        AddLinksTask(Context context, OnFinishListener onFinish) {
             listener = onFinish;
+            progress = new ProgressDialog(context);
         }
 
         @Override
         protected void onPreExecute() {
-            showDialog(DIALOG_ID_ADD);
+            progress.setTitle("Add links");
+            progress.show();
         }
 
+        int lastError = 0;
         @Override
         protected Boolean doInBackground(List<String>... lists) {
             boolean isSuccess = true;
@@ -257,8 +241,10 @@ public class DiscoveryActivity extends Activity {
             publishProgress(count++);
             for(String url : lists[0]) {
                 try {
-                    if(!client.subscribe(url)) {
+                    int err = client.subscribe(url);
+                    if(err != 0) {
                         isSuccess = false;
+                        lastError = err;
                     }
                     publishProgress(count++);
                 } catch (IOException e) {
@@ -277,18 +263,18 @@ public class DiscoveryActivity extends Activity {
 
         @Override
         protected void onProgressUpdate(Integer... values) {
-            if(dialogAdd != null)
-                dialogAdd.setMessage("Add (" + values[0] + ") link...");
+            progress.setMessage("Add (" + values[0] + ") link...");
         }
 
         @Override
         protected void onPostExecute(Boolean isSuccess) {
-            if(dialogAdd != null) {
-                dialogAdd.dismiss();
-                dialogAdd = null;
-            }
+            progress.dismiss();
             if(isSuccess == false) {
-                showMessage("FAIL");
+                if(lastError == 1) {
+                    showMessage("FAIL: already added");
+                } else {
+                    showMessage("FAIL");
+                }
                 return;
             }
             listener.done();

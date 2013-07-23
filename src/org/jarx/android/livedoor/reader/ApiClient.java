@@ -302,7 +302,7 @@ public class ApiClient {
         return (errorCode == 0 && isSuccess == 1);
     }
 
-    public boolean subscribe(String link) throws IOException, ReaderException, ParseException {
+    public int subscribe(String link) throws IOException, ReaderException, ParseException {
         initApiKey();
 
         List<NameValuePair> params = new ArrayList<NameValuePair>(1);
@@ -310,9 +310,14 @@ public class ApiClient {
         JSONObject result = toJSONObject(doPostReader(URL_API_SUBSCRIBE, params));
 
         int errorCode = asInt(result.get("ErrorCode"));
+        /*
         int isSuccess = asInt(result.get("isSuccess"));
-
         return (errorCode == 0 && isSuccess == 1);
+        */
+
+
+        return errorCode;
+
     }
 
     /** implements /api/pin/add */
